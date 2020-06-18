@@ -28,13 +28,12 @@ namespace WebApplication1.Controllers
             IActionResult response;
             try
             {
-                //response = Ok(dbService.GetTeams(championshipId));
-                return Ok(dbService.GetTeams(championshipId));
+                response = Ok(dbService.GetTeams(championshipId));
+
             }
             catch (NoChampionshipException e)
             {
-                //response = NotFound($"No championship\n{e.Message}");
-                return NotFound($"No championship\n{e.Message}");
+                response = NotFound($"No championship\n{e.Message}");
             }
             return response;
         }
